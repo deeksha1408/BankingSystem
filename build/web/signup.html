@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<html>
+    <head>
+        <title>ONLINE BANKING</title>
+        
+        <script>
+        function verify()
+        {
+        if(!check_f_name())
+        return false;
+    if(!check_m_name())
+        return false;
+    if(!check_l_name())
+        return false;
+        if(!check_password())
+        return false;
+    if(!check_email())
+        return false;
+        }
+        function check_f_name()
+        {
+            
+        var val=document.f1.t1.value;
+len=val.length;
+if(val==="")
+{
+alert("Please enter your first_name");
+return(false);
+}
+if(len>20)
+{
+alert("First Name exceeds 20 characters");
+return(false);
+}
+var letters="^[a-zA-Z]*$";
+if(!val.match(letters))
+{
+alert("First Name must only contain alphabets");
+return(false);
+}
+return(true);
+}
+
+function check_m_name()
+        {
+            
+        var val=document.f1.t2.value;
+len=val.length;
+if(len>20)
+{
+alert("Middle Name exceeds 20 characters");
+return(false);
+}
+var letters="^[a-zA-Z]*$";
+if(!val.match(letters))
+{
+alert("Middle Name must only contain alphabets");
+return(false);
+}
+return(true);
+}
+
+function check_l_name()
+        {
+            
+        var val=document.f1.t3.value;
+len=val.length;
+if(val==="")
+{
+alert("Please enter your last name");
+return(false);
+}
+if(len>20)
+{
+alert("Last Name exceeds 20 characters");
+return(false);
+}
+var letters="^[a-zA-Z]*$";
+if(!val.match(letters))
+{
+alert("Last Name must only contain alphabets");
+return(false);
+}
+return(true);
+}
+function check_password()
+{
+ pass=document.f1.t8.value;
+ len=pass.length;
+ if(len<7)
+ {
+ alert("length of password is less than 6");
+return(false);
+}
+return(true);
+ }
+ 
+ function check_email()
+ {
+     var x=document.f1.t9.value;
+     var atpos1=x.indexOf("@");
+     var atpos2=x.lastIndexOf("@");
+     var dotpos=x.lastIndexOf(".");
+     var n=x.length;
+     if(atpos1 !== atpos2 || atpos1+10 !== n || atpos1+6 !== dotpos)
+     {
+         alert("PLEASE ENTER A VALID EMAIL ADDRESS");
+         return false;
+         
+     }
+     return (true);
+ }
+ 
+ </script>
+  
+    </head>
+
+    <body style="background-image:linear-gradient(to right,brown,white);background-size:cover;background-position:center;background-repeat:no-repeat">
+       
+   <h2 STYLE="text-align:center;color:cadetblue ">SIGNUP FORM</h2>
+
+<form name="f1" method="post" onSubmit="return verify()" action="signup.jsp">
+    <table cellpadding="10" cellspacing="10" border="5" style="margin:0 auto; height:50%;">
+<tr><td>FIRST NAME</td><td><input type="text" name="t1"
+placeholder="Firstname" required></td></tr>
+<tr><td>MIDDLE NAME</td><td><input type="text" name="t2"
+placeholder="Middlename" ></td></tr> 
+<tr><td>LAST NAME</td><td><input type="text" name="t3"
+placeholder="Lastname" required></td></tr>
+<tr><td>ADDRESS</td><td><input type="text" name="t4"
+placeholder="Address" required></td></tr>
+<tr><td>AGE</td><td><input type="text" name="t5"
+placeholder="Age" required></td></tr>
+<tr><td>AADHAR NUMBER</td><td><input type="text" name="t6"
+placeholder="Aadhar number" required></td></tr>
+<tr><td>USERNAME</td><td><input type="text" name="t7"
+placeholder="username" required></td></tr>
+<tr><td>PASSWORD</td><td><input type="password" name="t8"
+placeholder="password" required></td></tr>
+
+<tr><td>EMAIL</td><td><input type="text" name="t9"
+placeholder="abc@gmail.com" required></td></tr>
+<tr><td>GENDER</td><td>Male<input type="radio" name="t10"
+value="M" required>
+Female<input type="radio" name="t10"
+value="F" required></td></tr>
+<tr><td>ACCOUNT NUMBER</td><td><input type="text" name="t11"
+placeholder="11 digit account_number" required></td></tr>
+<tr><td>BALANCE</td><td><input type="text" name="t12"
+placeholder="amount in rupees" required></td></tr>
+
+<tr><td><input type="submit" value="login">
+</td><td>
+    <input type="reset" value="clear"></td></tr>
+</table>
+</form>
+</body>
+</html>
+

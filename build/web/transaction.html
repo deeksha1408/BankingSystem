@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="a1.css">
+    
+   
+    <script>
+        function verify()
+        {
+        if(!debit())
+        return false;
+        }
+        function debit()
+        {
+            
+            var val=document.f1.t2.value;
+            var balance='<%=Session["s7"].ToInt()%>';
+if(balance < val)
+{
+alert("Your balance is less than amount withdrawl");
+return(false);
+}
+return(true);
+}
+</script>
+  
+</head>
+
+ <body>
+        
+        <br><br><br><br>
+        <div class="container">
+            <div class="row row-style">
+                
+                    <div class="panel panel-primary" style="width:50%;margin:auto;">
+         <div class="panel-heading">
+             LOGIN
+         </div>
+            <div class="panel-body">
+                
+                <div class="text-warning">
+                     <p>
+                         Login to start transaction
+                    </p>
+                </div>
+            
+                <form name="f1" onSubmit="return verify()" action="transaction.jsp"> 
+                    <div class="form-group">
+                <input type="text" placeholder="Username" class="form-control" name="t1">
+                    </div>
+                    <div class="form-group">
+                <input type="text" placeholder="WITHDRAWL-AMOUNT" class="form-control" name="t2">
+                    </div>
+                    <div class="form-group">
+                <input type="text" placeholder="DEPOSIT-AMOUNT" class="form-control" name="t3">
+                    </div>
+                    <div class="form-group">
+                <input type="text" placeholder="YYYY/MM/DD" class="form-control" name="t4">
+                    </div>
+                    
+                    <div class="form-group">
+                <input type="submit" class="btn-primary" name="PROCESS" value="PROCESS">
+                </div>
+            </form>
+            
+            </div>
+        </div>
+         </div>
+           </div> 
+ </body>
+</html>
